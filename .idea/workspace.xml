@@ -136,7 +136,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.flights">
+  <component name="RunManager" selected="Flask server.Travel">
     <configuration name="dummy" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Travel" />
       <option name="INTERPRETER_OPTIONS" value="" />
