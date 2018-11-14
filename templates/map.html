@@ -8,14 +8,14 @@
   </head>
   <body>
   <div style="width: 640px; height: 480px" id="mapContainer"></div>
-  {% for  merchant in merchants  %}
-        <p><b> {{ merchant.name }}</b></p>
-        <p><b> {{ merchant.lat }}</b></p>
-        <p><b> {{ merchant.lng }}</b></p>
-            {% for cur in merchant.category %}
-                <p> {{ cur }}</p>
-            {% endfor %}
-  {% endfor %}
+{#  {% for  merchant in merchants  %}#}
+{#        <p><b> {{ merchant.name }}</b></p>#}
+{#        <p><b> {{ merchant.lat }}</b></p>#}
+{#        <p><b> {{ merchant.lng }}</b></p>#}
+{#            {% for cur in merchant.category %}#}
+{#                <p> {{ cur }}</p>#}
+{#            {% endfor %}#}
+{#  {% endfor %}#}
   <script>
     // Initialize the platform object:
     var platform = new H.service.Platform({
@@ -52,6 +52,22 @@
     map.addObject(marker);
     map.setCenter(coords);
 
+    var data = {{ data|tojson }}
+
+    for( i in data){
+        document.write(data[i]["name"]+data[i]["geocode"]["lat"] + data[i]["geocode"]["lng"])
+        // Create an icon, an object holding the latitude and longitude, and a marker:
+        var icon = new H.map.Icon(svgMarkup),
+          coords = {lat: data[i]["geocode"]["lat"], lng: data[i]["geocode"]["lng"]},
+          marker = new H.map.Marker(coords, {icon: icon});
+
+        // Add the marker to the map and center the map at the location of the marker:
+        map.addObject(marker);
+
+
+
+
+    }
 
 
   </script>
