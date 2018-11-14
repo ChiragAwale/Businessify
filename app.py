@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import  serviceLayer.captialOne.merchant_data as merchant_data
+
 
 app = Flask(__name__)
 
@@ -8,7 +10,9 @@ def index():
 
 @app.route('/map')
 def map():
-    return render_template('map.html')
+    merchants = merchant_data.get_merchants()
+    #print(merchants.__sizeof__())
+    return render_template('map.html',merchants = merchants[:10])
 
 
 

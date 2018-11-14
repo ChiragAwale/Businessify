@@ -28,7 +28,5 @@ def merchants_set():
 
 merchants_set()
 
-"""
-for merchant in merchants:
-    print(merchant.category)
-"""
+def get_merchants():
+    return merchants
