@@ -22,39 +22,26 @@
     <div id="map"></div>
     <script>
         function initMap() {
-            var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+            var myLatlng = new google.maps.LatLng(38.903400, -77.042090);
             var mapOptions = {
-              zoom: 4,
-              center: myLatlng
+                zoom: 15,
+                center: myLatlng
             }
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-            var marker = new google.maps.Marker({
-                position: myLatlng,
-                title:"Hello World!"
-            });
 
-            // To add the marker to the map, call setMap();
-            marker.setMap(map);
+            var data =
+            {{ data|tojson }}
 
-
-            var data = {{ data|tojson }}
-
-            for( i in data){
+            for (i in data) {
                 var coords = {lat: data[i]["geocode"]["lat"], lng: data[i]["geocode"]["lng"]};
                 var marker = new google.maps.Marker({
                     position: coords,
-                    title:"Test!"
+                    title: data[i]["name"],
+
                 });
                 marker.setMap(map);
             }
-
-
-
-
-
-
-
         }
 
     </script>
