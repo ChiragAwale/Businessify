@@ -1,6 +1,6 @@
 import requests
 import serviceLayer.helper as helper
-import Models.Models as models
+import models.Models as models
 
 
 API_CODE = "787add7451c5173af617ca2c5ce53497"

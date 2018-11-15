@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import  serviceLayer.captialOne.merchant_data as merchant_data
+import  serviceLayer.capital_one.merchant_data as merchant_data
 import json
 
 app = Flask(__name__)
