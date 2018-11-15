@@ -12,7 +12,7 @@ def index():
 def map():
     merchants = merchant_data.get_merchants()
     data = merchant_data.get_merchants_json()
-    return render_template('map.html',merchants = merchants[:10], data = data)
+    return render_template('map.html', merchants =merchants[:10], data = data)
 
 
 

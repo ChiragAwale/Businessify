@@ -1,75 +1,64 @@
+<!DOCTYPE html>
 <html>
   <head>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-  type="text/javascript" charset="utf-8"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-  type="text/javascript" charset="utf-8"></script>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
-  <div style="width: 640px; height: 480px" id="mapContainer"></div>
-{#  {% for  merchant in merchants  %}#}
-{#        <p><b> {{ merchant.name }}</b></p>#}
-{#        <p><b> {{ merchant.lat }}</b></p>#}
-{#        <p><b> {{ merchant.lng }}</b></p>#}
-{#            {% for cur in merchant.category %}#}
-{#                <p> {{ cur }}</p>#}
-{#            {% endfor %}#}
-{#  {% endfor %}#}
-  <script>
-    // Initialize the platform object:
-    var platform = new H.service.Platform({
-    'app_id': 'HD9HiWxFHvvcWbLOhuOk',
-    'app_code': 'Qla5DT3x5yqKA4nodcUfkQ'
-    });
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+            var mapOptions = {
+              zoom: 4,
+              center: myLatlng
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    // Obtain the default map types from the platform object
-    var maptypes = platform.createDefaultLayers();
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title:"Hello World!"
+            });
 
-    // Instantiate (and display) a map object:
-    var map = new H.Map(
-    document.getElementById('mapContainer'),
-    maptypes.normal.map,
-    {
-      zoom:1,
-      center: { lng: 13.4, lat: 52.51 }
-    });
+            // To add the marker to the map, call setMap();
+            marker.setMap(map);
 
-    // Define a variable holding SVG mark-up that defines an icon image:
-    var svgMarkup = '<svg width="24" height="24" ' +
-      'xmlns="http://www.w3.org/2000/svg">' +
-      '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
-      'height="22" /><text x="12" y="18" font-size="12pt" ' +
-      'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
-      'fill="white">H</text></svg>';
 
-    // Create an icon, an object holding the latitude and longitude, and a marker:
-    var icon = new H.map.Icon(svgMarkup),
-      coords = {lat: 52.53075, lng: 13.3851},
-      marker = new H.map.Marker(coords, {icon: icon});
+            var data = {{ data|tojson }}
 
-    // Add the marker to the map and center the map at the location of the marker:
-    map.addObject(marker);
-    map.setCenter(coords);
-
-    var data = {{ data|tojson }}
-
-    for( i in data){
-        document.write(data[i]["name"]+data[i]["geocode"]["lat"] + data[i]["geocode"]["lng"])
-        // Create an icon, an object holding the latitude and longitude, and a marker:
-        var icon = new H.map.Icon(svgMarkup),
-          coords = {lat: data[i]["geocode"]["lat"], lng: data[i]["geocode"]["lng"]},
-          marker = new H.map.Marker(coords, {icon: icon});
-
-        // Add the marker to the map and center the map at the location of the marker:
-        map.addObject(marker);
+            for( i in data){
+                var coords = {lat: data[i]["geocode"]["lat"], lng: data[i]["geocode"]["lng"]};
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    title:"Test!"
+                });
+                marker.setMap(map);
+            }
 
 
 
 
-    }
 
 
-  </script>
+
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&callback=initMap"
+    async defer></script>
   </body>
 </html>
