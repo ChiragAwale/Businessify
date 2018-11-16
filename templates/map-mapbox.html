@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+<div id='map' style='width: 400px; height: 300px;'></div>
+    <script>
+        var ACCESS_TOKEN = {{ ACCESS_TOKEN|tojson }};
+        mapboxgl.accessToken = ACCESS_TOKEN;
+
+        {#Instantiates Map#}
+        var map = new mapboxgl.Map({
+          container: 'map', // HTML container id
+          style: 'mapbox://styles/mapbox/streets-v9', // style URL
+          center: [-77.042090, 38.903400], // starting position as [lng, lat]
+          zoom: 13
+        });
+
+        var popup = new mapboxgl.Popup()
+        .setHTML('<h3>Reykjavik Roasters</h3><p>A good coffee shop</p>');
+
+
+        {#ADDS A MARKER TO MAP#}
+        var marker = new mapboxgl.Marker()
+        .setLngLat([-77.042090, 38.903400])
+        .setPopup(popup)
+        .addTo(map);
+
+        {# ADDS A POLYGON TO MAP #}
+        map.on('load', function () {
+
+            map.addLayer({
+                'id': 'maine',
+                'type': 'fill',
+                'source': {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'Feature',
+                        'geometry': {
+                            'type': 'Polygon',
+                            'coordinates': {{ isc|tojson }}
+                        }
+                    }
+                },
+                'layout': {},
+                'paint': {
+                    'fill-color': '#088',
+                    'fill-opacity': 0.8
+                }
+            });
+        });
+
+
+
+
+    </script>
+</body>
+</html>

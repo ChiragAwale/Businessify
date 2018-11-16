@@ -23,6 +23,7 @@ class ProspectiveBusiness:
 class User:
     prospective_business_list = []
     preferences = Preferences();
+
     def __init__(self,userId,firstName,lastName,address,email,phone):
         self.userId = userId
         self.firstName = firstName
@@ -40,7 +41,7 @@ class User:
     def get_prospective_business_list(self):
         return self.prospective_business_list
 
-    def update_prospective_business_list(self,prospective_business):
+    def add_prospective_business(self,prospective_business):
         self.prospective_business_list.append(prospective_business)
 
 
