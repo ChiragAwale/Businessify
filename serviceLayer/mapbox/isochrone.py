@@ -19,6 +19,6 @@ def get_coordinates(lat,lng,mode=None):
     resp = requests.get(request_url)
     json_object = resp.json()
     #print(json_object["features"][0]["geometry"]["coordinates"])
-    return json_object["features"][0]["geometry"]["coordinates"]
+    return json_object["features"][2]["geometry"]["coordinates"]
 
 

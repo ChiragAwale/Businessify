@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import  serviceLayer.capital_one.merchant_data as merchant_data
 import config_k as config
-import isochrone as isochrone
+from serviceLayer.mapbox import isochrone as isochrone
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def index():
 def map():
     merchants = merchant_data.get_merchants()
     data = merchant_data.get_merchants_json()
-    isc = isochrone.get_coordinates('-77.042090','38.903400')
+    isc = isochrone.get_coordinates('-77.042090', '38.903400')
 
     access_token = config.MAPBOX_ACCESS_TOKEN
     print(access_token)

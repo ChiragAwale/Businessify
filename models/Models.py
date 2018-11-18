@@ -1,9 +1,15 @@
 class Merchant:
-    def __init__(self, name, category, geocode):
+    def __init__(self,name, category, geocode, b_id = None, address = None, city = None, state = None, country = None, zip = None):
         self.name = name
         self.category = category
         self.lat = geocode["lat"]
         self.lng = geocode["lng"]
+        self.b_id = b_id
+        self.address = address
+        self.city = city
+        self.state = state
+        self.country = country
+        self.zip = zip
 
 
 class Preferences:
@@ -13,11 +19,17 @@ class Preferences:
 
 
 class ProspectiveBusiness:
-    def __init__(self, name, category, address, note):
+    def __init__(self, name, category, note, address = None,city = None,state = None,country = None,zip = None):
         self.name = name
         self.category = category
         self.address = address
         self.note = note
+        self.address = address
+        self.city = city
+        self.state = state
+        self.country = country
+        self.zip = zip
+
 
 
 class User:

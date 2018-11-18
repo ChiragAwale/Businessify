@@ -22,7 +22,7 @@
         });
 
         var popup = new mapboxgl.Popup()
-        .setHTML('<h3>Reykjavik Roasters</h3><p>A good coffee shop</p>');
+        .setHTML('<h3>Test</h3><p>A good marker</p>');
 
 
         {#ADDS A MARKER TO MAP#}
@@ -54,6 +54,20 @@
                 }
             });
         });
+
+        var data = {{ data|tojson }}
+
+        for (i in data) {
+
+            var popup = new mapboxgl.Popup()
+            .setHTML('<h3>'+data[i]["name"]+'</h3><p>A good marker</p>');
+
+            var marker = new mapboxgl.Marker()
+            .setLngLat([data[i]["geocode"]["lng"],data[i]["geocode"]["lat"]])
+
+            .addTo(map);
+
+        }
 
 
 
