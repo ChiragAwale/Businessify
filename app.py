@@ -11,13 +11,13 @@ def index():
 
 @app.route('/map')
 def map():
-    merchants = merchant_data.get_merchants()
-    data = merchant_data.get_merchants_json()
+    #merchants = merchant_data.get_merchants()
+    data = merchant_data.get_merchants_capital_one_json()
     isc = isochrone.get_coordinates('-77.042090', '38.903400')
 
     access_token = config.MAPBOX_ACCESS_TOKEN
     print(access_token)
-    return render_template('map-mapbox.html', merchants =merchants[:10], data = data, ACCESS_TOKEN = access_token, isc = isc )
+    return render_template('map-mapbox.html',  data = data, ACCESS_TOKEN = access_token, isc = isc )
 
 
 

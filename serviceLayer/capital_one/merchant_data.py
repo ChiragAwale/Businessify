@@ -19,7 +19,7 @@ def public_transit():
 
 
 def merchants_set():
-    data = helper.read_json_from_file()
+    data = helper.read_json_from_file("response")
 
     for i in data:
         #print(i)
@@ -37,6 +37,10 @@ def get_merchants():
     return merchants
 
 
-def get_merchants_json():
-    data = helper.read_json_from_file()
+def get_merchants_capital_one_json():
+    data = helper.read_json_from_file("response")
+    return data
+
+def get_merchants_data_yelp_json():
+    data = helper.read_json_from_file("yelp_business")
     return data

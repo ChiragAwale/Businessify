@@ -58,7 +58,7 @@
         var data = {{ data|tojson }}
 
         for (i in data) {
-
+             {##CAPITAL ONE#}
             var popup = new mapboxgl.Popup()
             .setHTML('<h3>'+data[i]["name"]+'</h3><p>A good marker</p>');
 
@@ -66,6 +66,14 @@
             .setLngLat([data[i]["geocode"]["lng"],data[i]["geocode"]["lat"]])
 
             .addTo(map);
+
+            {#var popup = new mapboxgl.Popup()#}
+            {#.setHTML('<h3>'+data[i]["name"]+'</h3><p>A good marker</p>');#}
+            {##}
+            {#var marker = new mapboxgl.Marker()#}
+            {#.setLngLat([data[i]["lng"],data[i]["lat"]])#}
+            {##}
+            {#.addTo(map);#}
 
         }
 
