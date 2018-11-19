@@ -1,6 +1,8 @@
 import json
 import os
 import ijson
+import pandas as pd
+
 
 
 def read_json(json_data):
@@ -16,12 +18,18 @@ def read_json_from_file(file_name):
         return data
 
 def read_djson():
-    DIRECTORY = os.path.dirname(os.path.abspath(__file__))+'/data/';
+
+    dataf = []
+    DIRECTORY = os.path.dirname(os.path.abspath(__file__))+'/data/'
 
     with open(DIRECTORY + "yelp_business.json") as f:
+
         for line in f:
             j_content = json.loads(line)
+            dataf.append(j_content)
 
-    print(j_content)
+    df = pd.DataFrame.from_dict(dataf, orient = 'columns')
+    print(df["state"].value_counts())
+
 
 read_djson()
