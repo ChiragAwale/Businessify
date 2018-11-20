@@ -20,7 +20,34 @@
   </head>
   <body>
     <div id="map"></div>
-    <script>
+{#    <script>#}
+{#        function initMap() {#}
+{#            var myLatlng = new google.maps.LatLng(38.903400, -77.042090);#}
+{#            var mapOptions = {#}
+{#                zoom: 15,#}
+{#                center: myLatlng#}
+{#            }#}
+{#            var map = new google.maps.Map(document.getElementById("map"), mapOptions);#}
+{##}
+{##}
+{#            var data =#}
+{#            {{ data|tojson }}#}
+{##}
+{#            for (i in data) {#}
+{#                var coords = {lat: data[i]["geocode"]["lat"], lng: data[i]["geocode"]["lng"]};#}
+{#                var marker = new google.maps.Marker({#}
+{#                    position: coords,#}
+{#                    title: data[i]["name"],#}
+{##}
+{#                });#}
+{#                marker.setMap(map);#}
+{#            }#}
+{#        }#}
+{##}
+{#    </script>#}
+
+
+        <script>
         function initMap() {
             var myLatlng = new google.maps.LatLng(38.903400, -77.042090);
             var mapOptions = {
@@ -31,10 +58,10 @@
 
 
             var data =
-            {{ data|tojson }}
+            {{ data|safe }}
 
             for (i in data) {
-                var coords = {lat: data[i]["geocode"]["lat"], lng: data[i]["geocode"]["lng"]};
+                var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
                 var marker = new google.maps.Marker({
                     position: coords,
                     title: data[i]["name"],
@@ -45,6 +72,9 @@
         }
 
     </script>
+
+
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&callback=initMap"
     async defer></script>
   </body>

@@ -5,9 +5,11 @@
     <title>Map</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src = "/static/handle.js"></script>
 </head>
 <body>
+
 <div id='map' style='width: 400px; height: 300px;'></div>
     <script>
         var ACCESS_TOKEN = {{ ACCESS_TOKEN|tojson }};
@@ -55,7 +57,7 @@
             });
         });
 
-        var data = {{ data|tojson }}
+        var data = {{ data|safe }};
 
         for (i in data) {
              {##Yelp Data#}

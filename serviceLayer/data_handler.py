@@ -1,5 +1,5 @@
 import serviceLayer.helper as helper
-
+import json
 
 class DataHandler:
 
@@ -8,9 +8,8 @@ class DataHandler:
 
     def get_list_by_city(self,city):
         dt = self.df[self.df['city'].isin(['Vaughan'])]
-        data = []
-        for i in dt.index:
-            data.append(dt.loc[i].to_json())
-
-        print(data[1])
-        return data
+        d = dt.to_dict(orient='records')
+        j = json.dumps(d)
+        print("inside")
+        print(j)
+        return j
