@@ -10,6 +10,4 @@ class DataHandler:
         dt = self.df[self.df['city'].isin(['Vaughan'])]
         d = dt.to_dict(orient='records')
         j = json.dumps(d)
-        print("inside")
-        print(j)
         return j

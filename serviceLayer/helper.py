@@ -5,6 +5,7 @@ import pandas as pd
 from pandas.io.json import json_normalize
 import numpy as np
 import matplotlib.pyplot as plt
+from geojson import Polygon
 
 
 dataf = []
@@ -22,6 +23,7 @@ def read_json_from_file(file_name):
         data = json.load(f)
         return data
 
+
 def read_djson():
     DIRECTORY = os.path.dirname(os.path.abspath(__file__))+'/data/'
 
@@ -35,6 +37,21 @@ def read_djson():
     # print(df["city"].value_counts())
     print("done djson load")
     return df
+
+
+# Converts given DataFrame to  GeoJson for map
+def df_to_geojson(df, properties, lat='latitude', lon='longitude'):
+    geojson = {'type':'FeatureCollection', 'features':[]}
+    for _, row in df.iterrows():
+        feature = {'type':'Feature',
+                   'properties':{},
+                   'geometry':{'type':'Point',
+                               'coordinates':[]}}
+        feature['geometry']['coordinates'] = [row[lon],row[lat]]
+        for prop in properties:
+            feature['properties'][prop] = row[prop]
+        geojson['features'].append(feature)
+    return geojson
 
 
 
