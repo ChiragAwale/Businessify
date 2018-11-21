@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ee09dd39-b9f6-4ed4-bd1c-6415801cbab1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/leaflet.ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/leaflet.ajax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mapsjs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/mapsjs-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/map-google.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map-google.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/map-mapbox1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map-mapbox1.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +23,7 @@
     <SUITE FILE_PATH="coverage/Businessify$data_handler.coverage" NAME="data_handler Coverage Results" MODIFIED="1542612092740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/serviceLayer" />
     <SUITE FILE_PATH="coverage/Travel$tabledef.coverage" NAME="tabledef Coverage Results" MODIFIED="1541261005394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Businessify$helper.coverage" NAME="helper Coverage Results" MODIFIED="1542607208812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/serviceLayer" />
-    <SUITE FILE_PATH="coverage/Businessify$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542836436348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Businessify$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542838472283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2055823560">
@@ -106,14 +103,14 @@
           <entry key="User" value="1" />
           <entry key="geojson" value="1" />
           <entry key="html" value="12" />
-          <entry key="js" value="3" />
+          <entry key="js" value="4" />
           <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="12" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="18" />
           <entry key="UML" value="7" />
@@ -123,7 +120,7 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="923" />
+          <entry key="HTML" value="964" />
           <entry key="JavaScript" value="94" />
           <entry key="PLAIN_TEXT" value="37" />
           <entry key="Python" value="5342" />
@@ -132,7 +129,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="html" value="923" />
+          <entry key="html" value="964" />
           <entry key="js" value="94" />
           <entry key="py" value="5342" />
         </counts>
@@ -156,8 +153,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/map-google.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="70" selection-end-column="15" />
+            <state relative-caret-position="313">
+              <caret line="89" column="57" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -219,6 +216,7 @@
         <option value="$PROJECT_DIR$/config_k.py" />
         <option value="$PROJECT_DIR$/templates/map-mapbox1.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/static/js/markerclusterer.js" />
         <option value="$PROJECT_DIR$/templates/map-google.html" />
       </list>
     </option>
@@ -267,6 +265,18 @@
             <path>
               <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
               <item name="Businessify" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Businessify" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Businessify" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -285,15 +295,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/images/marker_clusterer" />
+      <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/serviceLayer/data" />
       <recent name="$PROJECT_DIR$/serviceLayer/mapbox" />
       <recent name="$PROJECT_DIR$/serviceLayer" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/serviceLayer/captialOne" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -481,7 +491,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.14592275" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.14592275" />
       <window_info x="0" y="0" width="1440" height="900" id="Structure" order="1" sideWeight="0.47108433" side_tool="true" type="FLOATING" weight="0.17453505" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Project Explorer" order="3" />
@@ -490,7 +500,7 @@
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32771084" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.2253012" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.2253012" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -530,7 +540,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/mapsjs-service.js">
+    <entry file="file://$PROJECT_DIR$/static/js/mapsjs-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
           <caret line="4" column="37" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="37" />
@@ -783,10 +793,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/markerclusterer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="1320" column="1" selection-start-line="1320" selection-start-column="1" selection-end-line="1320" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/map-google.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="70" selection-end-column="15" />
+        <state relative-caret-position="313">
+          <caret line="89" column="57" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
         </state>
       </provider>
     </entry>

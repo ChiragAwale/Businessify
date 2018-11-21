@@ -87,7 +87,7 @@
 
              // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+            {imagePath: 'static/images/marker_clusterer/m'});
         }
         var data = {{ data|safe }}
         var locations = [];
@@ -100,7 +100,7 @@
 
     </script>
 
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    <script src="static/js/markerclusterer.js">
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&callback=initMap"
