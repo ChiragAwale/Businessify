@@ -28,11 +28,9 @@ def map():
 def map1():
     data = data_handler.get_list_by_city("Vaughan")
     isc = isochrone.get_coordinates('-77.042090', '38.903400')
-
     access_token = config.MAPBOX_ACCESS_TOKEN
 
-    return render_template('map-mapbox1.html',  data=data, ACCESS_TOKEN=access_token, isc=isc )
-
+    return render_template('map-mapbox1.html',   data=data, ACCESS_TOKEN=access_token, isc=isc )
 
 
 
