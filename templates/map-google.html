@@ -20,6 +20,7 @@
   </head>
   <body>
     <div id="map"></div>
+{#    Capital One data #}
 {#    <script>#}
 {#        function initMap() {#}
 {#            var myLatlng = new google.maps.LatLng(38.903400, -77.042090);#}
@@ -56,24 +57,51 @@
             }
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-            var data =
-            {{ data|safe }}
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function(location, i) {
+              return new google.maps.Marker({
+                position: location,
+                label: labels[i % labels.length]
+              });
+            });
 
-            for (i in data) {
-                var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
-                var marker = new google.maps.Marker({
-                    position: coords,
-                    title: data[i]["name"],
 
-                });
-                marker.setMap(map);
-            }
+            {#Markers #}
+            {#var data =#}
+            {#{{ data|safe }}#}
+            {##}
+            {#for (i in data) {#}
+            {#    var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};#}
+            {#    var marker = new google.maps.Marker({#}
+            {#        position: coords,#}
+            {#        title: data[i]["name"],#}
+            {##}
+            {#    });#}
+            {#    marker.setMap(map);#}
+            {# }#}
+
+             // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
         }
+        var data = {{ data|safe }}
+        var locations = [];
+        for(i in data){
+            var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
+            locations.push(coords);
+        }
+
+
 
     </script>
 
-
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&callback=initMap"
     async defer></script>

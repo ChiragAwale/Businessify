@@ -41,7 +41,7 @@
 
         $.ajax({
         dataType: "json",
-        url: "service_layer/data/dataset.json",
+        url: "/service_layer/data/dataset.json",
         success: function(data) {
             $(data.features).each(function(key, data) {
                 district_boundary.addData(data);

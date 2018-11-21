@@ -30,10 +30,12 @@ def map1():
     isc = isochrone.get_coordinates('-77.042090', '38.903400')
     access_token = config.MAPBOX_ACCESS_TOKEN
 
-    return render_template('map-mapbox1.html',   data=data, ACCESS_TOKEN=access_token, isc=isc )
+    return render_template('map-google.html',   data=data, ACCESS_TOKEN=access_token, isc=isc )
 
 
-
+@app.route('/service_layer/data/dataset.json')
+def da():
+    return send_from_directory("service_layer/data/","dataset.json")
 
 if __name__ == '__main__':
     app.run()

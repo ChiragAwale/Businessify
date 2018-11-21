@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee09dd39-b9f6-4ed4-bd1c-6415801cbab1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/leaflet.ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/leaflet.ajax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/map-google.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map-google.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/map-mapbox1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map-mapbox1.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +26,7 @@
     <SUITE FILE_PATH="coverage/Businessify$data_handler.coverage" NAME="data_handler Coverage Results" MODIFIED="1542612092740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/serviceLayer" />
     <SUITE FILE_PATH="coverage/Travel$tabledef.coverage" NAME="tabledef Coverage Results" MODIFIED="1541261005394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Businessify$helper.coverage" NAME="helper Coverage Results" MODIFIED="1542607208812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/serviceLayer" />
-    <SUITE FILE_PATH="coverage/Businessify$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542832912843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Businessify$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542836436348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2055823560">
@@ -91,9 +95,9 @@
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -101,14 +105,14 @@
           <entry key="JavaScript-modules-diagram//Users/chiragawale/Projects/Businessify" value="1" />
           <entry key="User" value="1" />
           <entry key="geojson" value="1" />
-          <entry key="html" value="11" />
+          <entry key="html" value="12" />
           <entry key="js" value="3" />
           <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="12" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="18" />
@@ -119,18 +123,18 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="778" />
+          <entry key="HTML" value="923" />
           <entry key="JavaScript" value="94" />
           <entry key="PLAIN_TEXT" value="37" />
-          <entry key="Python" value="5206" />
+          <entry key="Python" value="5342" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="html" value="778" />
+          <entry key="html" value="923" />
           <entry key="js" value="94" />
-          <entry key="py" value="5206" />
+          <entry key="py" value="5342" />
         </counts>
       </usages-collector>
     </session>
@@ -140,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="434">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -150,10 +154,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/map-mapbox1.html">
+        <entry file="file://$PROJECT_DIR$/templates/map-google.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="351">
+              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="70" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -163,30 +167,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
               <caret line="1" column="117" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serviceLayer/helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serviceLayer/data_handler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -232,14 +212,14 @@
         <option value="$PROJECT_DIR$/serviceLayer/capital_one/merchant_data.py" />
         <option value="$PROJECT_DIR$/serviceLayer/processing.py" />
         <option value="$PROJECT_DIR$/templates/map-mapbox.html" />
-        <option value="$PROJECT_DIR$/templates/map-google.html" />
         <option value="$PROJECT_DIR$/static/handle.js" />
         <option value="$PROJECT_DIR$/serviceLayer/helper.py" />
         <option value="$PROJECT_DIR$/serviceLayer/data_handler.py" />
         <option value="$PROJECT_DIR$/static/leaflet.ajax.min.js" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/config_k.py" />
         <option value="$PROJECT_DIR$/templates/map-mapbox1.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/map-google.html" />
       </list>
     </option>
   </component>
@@ -277,13 +257,7 @@
             <path>
               <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
               <item name="Businessify" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceLayer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Businessify" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceLayer" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="service_layer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
@@ -507,7 +481,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.14377682" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.14592275" />
       <window_info x="0" y="0" width="1440" height="900" id="Structure" order="1" sideWeight="0.47108433" side_tool="true" type="FLOATING" weight="0.17453505" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Project Explorer" order="3" />
@@ -565,13 +539,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/entity/__init__.py" />
     <entry file="file://$PROJECT_DIR$/entity/merchant.py" />
-    <entry file="file://$PROJECT_DIR$/serviceLayer/data/response.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret column="110" selection-start-column="92" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceLayer/data/response.json" />
     <entry file="uml://Python/#/Users/chiragawale/Projects/Travel/app.py">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -616,9 +584,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serviceLayer/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceLayer/__init__.py" />
     <entry file="uml://JavaScript-modules-diagram//Users/chiragawale/Projects/Businessify">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -766,39 +732,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serviceLayer/mapbox/isochrone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serviceLayer/capital_one/merchant_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1542510831357" expanded="true" signature="438:781" ph="..." />
-            <marker date="1542510831357" expanded="true" signature="819:824" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/serviceLayer/mapbox/isochrone.py" />
+    <entry file="file://$PROJECT_DIR$/serviceLayer/capital_one/merchant_data.py" />
     <entry file="file://$PROJECT_DIR$/models/Models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/map-google.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -818,6 +757,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dataset.geojson" />
+    <entry file="file://$PROJECT_DIR$/serviceLayer/data_handler.py" />
+    <entry file="file://$PROJECT_DIR$/serviceLayer/helper.py" />
     <entry file="file://$PROJECT_DIR$/config_k.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -825,40 +766,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serviceLayer/data_handler.py">
+    <entry file="file://$PROJECT_DIR$/templates/map-mapbox1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serviceLayer/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="774">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="434">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/map-mapbox1.html">
+    <entry file="file://$PROJECT_DIR$/templates/map-google.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="351">
+          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="70" selection-end-column="15" />
         </state>
       </provider>
     </entry>
