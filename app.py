@@ -1,8 +1,8 @@
-from flask import Flask, render_template
-import  serviceLayer.capital_one.merchant_data as merchant_data
+from flask import Flask, render_template, send_from_directory
+import  service_layer.capital_one.merchant_data as merchant_data
 import config_k as config
-from serviceLayer.mapbox import isochrone as isochrone
-import serviceLayer.data_handler as dh
+from service_layer.mapbox import isochrone as isochrone
+import service_layer.data_handler as dh
 
 
 app = Flask(__name__)
@@ -31,6 +31,7 @@ def map1():
     access_token = config.MAPBOX_ACCESS_TOKEN
 
     return render_template('map-mapbox1.html',   data=data, ACCESS_TOKEN=access_token, isc=isc )
+
 
 
 
