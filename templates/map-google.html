@@ -88,13 +88,37 @@
              // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'static/images/marker_clusterer/m'});
+
+        {# For processing coordinate data #}
+        var iscdata = {{ isc|tojson }}
+        var coords_list = [];
+        for(i in iscdata[0]){
+            coords = {lat: iscdata[0][i][1] , lng: iscdata[0][i][0]};
+            coords_list.push(coords);
+            console.log(coords);
         }
+        var polygon_var = new google.maps.Polygon({
+          paths: coords_list,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        polygon_var.setMap(map);
+
+
+        }
+
+        {# Clustering business data on map #}
         var data = {{ data|safe }}
         var locations = [];
         for(i in data){
             var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
             locations.push(coords);
         }
+
+
 
 
 
