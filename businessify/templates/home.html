@@ -61,8 +61,8 @@
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'static/images/marker_clusterer/m'});
 
-        {# For processing coordinate data #}
-        var iscdata = {{ isc|tojson }}
+        {# For processing coordinate data for a minute distance #}
+        var iscdata = {{ isc1|tojson }}
         var coords_list = [];
         for(i in iscdata[0]){
             coords = {lat: iscdata[0][i][1] , lng: iscdata[0][i][0]};
@@ -79,6 +79,41 @@
         });
         polygon_var.setMap(map);
 
+        {# For processing coordinate data for 2 minutes distance#}
+        var iscdata = {{ isc2|tojson }}
+        var coords_list = [];
+        for(i in iscdata[0]){
+            coords = {lat: iscdata[0][i][1] , lng: iscdata[0][i][0]};
+            coords_list.push(coords);
+            console.log(coords);
+        }
+        var polygon_var = new google.maps.Polygon({
+          paths: coords_list,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        polygon_var.setMap(map);
+
+        {# For processing coordinate data for 10 minutes distance #}
+        var iscdata = {{ isc10|tojson }}
+        var coords_list = [];
+        for(i in iscdata[0]){
+            coords = {lat: iscdata[0][i][1] , lng: iscdata[0][i][0]};
+            coords_list.push(coords);
+            console.log(coords);
+        }
+        var polygon_var = new google.maps.Polygon({
+          paths: coords_list,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        polygon_var.setMap(map);
 
         }
 

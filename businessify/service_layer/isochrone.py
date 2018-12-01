@@ -33,4 +33,9 @@ def get_isochrone_os(lat,lng,mode=None):
     resp = requests.get(request_url)
     json_object = resp.json()
     print(json_object["features"][0]["geometry"]["coordinates"])
-    return json_object["features"][2]["geometry"]["coordinates"]
+    isochrone_coords = []
+    isochrone_coords.append(json_object["features"][0]["geometry"]["coordinates"])
+    isochrone_coords.append(json_object["features"][1]["geometry"]["coordinates"])
+    isochrone_coords.append(json_object["features"][2]["geometry"]["coordinates"])
+    # return json_object["features"][2]["geometry"]["coordinates"]
+    return isochrone_coords

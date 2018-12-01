@@ -18,7 +18,8 @@ def home():
     data = data_handler.get_list_by_city("Vaughan")
     isc = isochrone.get_isochrone_os('38.903400', '-77.042090')
     access_token = config.MAPBOX_ACCESS_TOKEN
-    return render_template('home.html', data=data, ACCESS_TOKEN=access_token, isc=isc)
+    return render_template('home.html', data=data, ACCESS_TOKEN=access_token, isc1=isc[0],isc2 = isc[1], isc10 = isc[2
+    ])
 
 
 @app.route("/about")
