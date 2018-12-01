@@ -1,4 +1,4 @@
-import service_layer.helper as helper
+import businessify.service_layer.helper as helper
 import json
 
 class DataHandler:
@@ -26,5 +26,3 @@ class DataHandler:
                 feature['properties'][prop] = row[prop]
             geojson['features'].append(feature)
         return geojson
-
-

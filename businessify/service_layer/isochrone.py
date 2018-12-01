@@ -1,4 +1,4 @@
-import config_k as config
+import businessify.config_k as config
 import requests
 
 lat = "-118.22258"
@@ -34,5 +34,3 @@ def get_isochrone_os(lat,lng,mode=None):
     json_object = resp.json()
     print(json_object["features"][0]["geometry"]["coordinates"])
     return json_object["features"][2]["geometry"]["coordinates"]
-
-

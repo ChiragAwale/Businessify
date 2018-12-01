@@ -37,8 +37,3 @@ def read_djson():
     # print(df["city"].value_counts())
     print("done djson load")
     return df
-
-
-
-
-
