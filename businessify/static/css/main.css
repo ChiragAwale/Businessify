@@ -13,11 +13,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header .navbar-nav .nav-link {
-  color: black;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: black;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link.active {

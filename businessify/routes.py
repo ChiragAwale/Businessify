@@ -15,7 +15,10 @@ data_handler = dh.DataHandler()
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    data = data_handler.get_list_by_city("Vaughan")
+    isc = isochrone.get_isochrone_os('38.903400', '-77.042090')
+    access_token = config.MAPBOX_ACCESS_TOKEN
+    return render_template('home.html', data=data, ACCESS_TOKEN=access_token, isc=isc)
 
 
 @app.route("/about")

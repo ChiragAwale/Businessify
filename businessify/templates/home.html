@@ -1,4 +1,104 @@
 {% extends "layout.html" %}
-{% block content %}
-    <p> Home Page </p>
-{% endblock content %}
+
+{% block map_style %}
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+
+      }
+    </style>
+{% endblock %}
+
+{% block map_content %}
+    <div id="map"></div>
+{% endblock  %}
+
+{% block map_scripts %}
+    <script>
+        function initMap() {
+            var myLatlng = new google.maps.LatLng(38.903400, -77.042090);
+            var mapOptions = {
+                zoom: 15,
+                center: myLatlng
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function(location, i) {
+              return new google.maps.Marker({
+                position: location,
+                label: labels[i % labels.length]
+              });
+            });
+
+
+            {#Markers #}
+            {#var data =#}
+            {#{{ data|safe }}#}
+            {##}
+            {#for (i in data) {#}
+            {#    var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};#}
+            {#    var marker = new google.maps.Marker({#}
+            {#        position: coords,#}
+            {#        title: data[i]["name"],#}
+            {##}
+            {#    });#}
+            {#    marker.setMap(map);#}
+            {# }#}
+
+             // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'static/images/marker_clusterer/m'});
+
+        {# For processing coordinate data #}
+        var iscdata = {{ isc|tojson }}
+        var coords_list = [];
+        for(i in iscdata[0]){
+            coords = {lat: iscdata[0][i][1] , lng: iscdata[0][i][0]};
+            coords_list.push(coords);
+            console.log(coords);
+        }
+        var polygon_var = new google.maps.Polygon({
+          paths: coords_list,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        polygon_var.setMap(map);
+
+
+        }
+
+        {# Clustering business data on map #}
+        var data = {{ data|safe }}
+        var locations = [];
+        for(i in data){
+            var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
+            locations.push(coords);
+        }
+
+
+
+
+
+    </script>
+
+    <script src="static/js/markerclusterer.js">
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&callback=initMap"
+    async defer></script>
+{% endblock %}
