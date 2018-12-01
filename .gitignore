@@ -68,5 +68,4 @@ __pycache__/
 
 yelp_business.json
 yelp_tips.json
-serviceLayer/yelp_academic_dataset_business.json
-serviceLayer/yelp_academic_dataset_tip.json
+dataset.json
