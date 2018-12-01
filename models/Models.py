@@ -36,8 +36,8 @@ class User:
     prospective_business_list = []
     preferences = Preferences();
 
-    def __init__(self,userId,firstName,lastName,address,email,phone):
-        self.userId = userId
+    def __init__(self,username,firstName,lastName,address,email,phone):
+        self.username = username
         self.firstName = firstName
         self.lastName = lastName
         self.address = address

@@ -1,17 +1,47 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory,flash,redirect,session,abort,request
 import  service_layer.capital_one.merchant_data as merchant_data
 import config_k as config
 from service_layer import isochrone as isochrone
 import service_layer.data_handler as dh
+import os
+from sqlalchemy.orm import sessionmaker
+from data_layer.tabledef import *
 
 
 app = Flask(__name__)
 
 data_handler = dh.DataHandler()
 
+
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    if not session.get('logged_in'):
+        return render_template('login.html')
+    else:
+        return "Hello Boss!  <a href='/logout'>Logout</a>"
+
+
+@app.route('/login', methods=['POST'])
+def do_admin_login():
+    POST_USERNAME = str(request.form['username'])
+    POST_PASSWORD = str(request.form['password'])
+
+    Session = sessionmaker(bind=engine)
+    s = Session()
+    query = s.query(User).filter(User.username.in_([POST_USERNAME]), User.password.in_([POST_PASSWORD]))
+    result = query.first()
+    if result:
+        session['logged_in'] = True
+    else:
+        flash('wrong password!')
+    return home()
+
+
+@app.route("/logout")
+def logout():
+    session['logged_in'] = False
+    return home()
+
 
 @app.route('/map')
 def map():
@@ -37,6 +67,9 @@ def map1():
 def da():
     return send_from_directory("service_layer/data/","dataset.json")
 
-if __name__ == '__main__':
-    app.run()
 
+
+
+app.secret_key = os.urandom(12)
+if __name__ == "__main__":
+    app.run(debug=True,host='0.0.0.0', port=4000)
