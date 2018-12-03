@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request,send_from_directory
+from flask import render_template, url_for, flash, redirect, request,send_from_directory, jsonify
 from businessify import app, db, bcrypt
 from businessify.forms import RegistrationForm, LoginForm
 from businessify.models import User, Post
@@ -7,6 +7,7 @@ import businessify.service_layer.capital_one.merchant_data as merchant_data
 import businessify.config_k as config, businessify.service_layer.data_handler as dh
 from businessify.service_layer import isochrone as isochrone
 import os
+
 
 data_handler = dh.DataHandler()
 
@@ -21,6 +22,15 @@ def home():
     return render_template('analyze.html', data=data, ACCESS_TOKEN=access_token, isc1=isc[0],isc2 = isc[1], isc10 = isc[2
     ])
 
+
+@app.route("/background_process_test", methods =['POST','GET'])
+def background_test():
+    print("test")
+    location = request.form["place"]
+    isc = data_handler.get_isochrone(location)
+    print("Returned")
+    print(isc)
+    return jsonify(isc_data = isc)
 
 @app.route("/about")
 def about():

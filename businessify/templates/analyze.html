@@ -21,6 +21,7 @@
 {#    </form>#}
 
     <button class = "btn btn-primary" id="myBtn" style="width: 80%; align-self: center">Analyze</button>
+    <button class = "btn btn-primary" id="analyze" style="width: 80%; align-self: center">tst</button>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -30,14 +31,15 @@
         <span class="close">&times;</span>
           <div id="demo">
             <div style="padding-bottom: 20px" >
-              <button type="button" class="btn btn-info" onclick="loadTen()">Show 10 minute Isochrone</button>
+              <button type="button" class="btn btn-info" onclick="loadIsochrone(isc0)">Show 1 minute Isochrone</button>
             </div>
             <div style="padding-bottom: 20px">
-              <button type="button" class="btn btn-info" onclick="loadTwo()">Show 2 minute Isochrone</button>
+              <button type="button" class="btn btn-info" onclick="loadIsochrone(isc1)">Show 2 minute Isochrone</button>
             </div>
             <div style="padding-bottom: 20px">
-              <button type="button" class="btn btn-info" onclick="loadOne()">Show 1 minute Isochrone</button>
+              <button type="button" class="btn btn-info" onclick="loadIsochrone(isc2)">Show 10 minute Isochrone</button>
             </div>
+          </div>
       </div>
     </div>
 
@@ -45,6 +47,7 @@
 {% endblock %}
 
 {% block analyze_script %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
     // Get the modal
     var modal = document.getElementById('myModal');
@@ -72,4 +75,38 @@
         }
     }
     </script>
+
+
+    <script type=text/javascript>
+    var btn = document.getElementById("analyze")
+
+        $(function() {
+          $('#analyze').bind('click', function() {
+              console.log(input.value)
+          {#  $.getJSON('/background_process_test',#}
+          {#      function(data) {#}
+          {#    //do nothing#}
+          {#  });#}
+          {#  return false;#}
+               $.ajax({
+                    url: '/background_process_test',
+                    data: { 'place' : input.value },
+                    type: "post",
+                    cache: false,
+                    success: function (isc_data) {
+
+                        console.log(isc_data)
+                        isc0 = isc_data["isc_data"][0][0];
+                        isc1 = isc_data["isc_data"][1][0];
+                        isc2 = isc_data["isc_data"][2][0];
+                        console.log(isc0)
+                        console.log("Finished")
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        $('#lblCommentsNotification').text("Error encountered while saving the comments.");
+                    }
+                });
+           });
+        });
+</script>
 {% endblock %}

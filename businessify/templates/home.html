@@ -14,6 +14,10 @@
 
 {% block map_scripts %}
     <script>
+        var input = "";
+        var isc0 = [];
+        var isc1 = [];
+        var isc2 = [];
         function initMap() {
             var myLatlng = new google.maps.LatLng(38.903400, -77.042090);
             var mapOptions = {
@@ -22,10 +26,11 @@
             }
             map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
 {#***************************************** Search and Search MARKERS **********************************************#}
 
             // Create the search box and link it to the UI element.
-            var input = document.getElementById('pac-input');
+            input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -193,6 +198,26 @@
             polygon_var.setMap(map);
         }
 
+
+            function loadIsochrone(isc) {
+            {# For processing coordinate data for one minute distance isochrone #}
+            var iscdata = isc
+            var coords_list = [];
+            for(i in iscdata){
+                coords = {lat: iscdata[i][1] , lng: iscdata[i][0]};
+                coords_list.push(coords);
+                console.log(coords);
+            }
+            var polygon_var = new google.maps.Polygon({
+              paths: coords_list,
+              strokeColor: '#0039ff',
+              strokeOpacity: 0.8,
+              strokeWeight: 3,
+              fillColor: '#0085ff',
+              fillOpacity: 0.35
+            });
+            polygon_var.setMap(map);
+        }
     </script>
 
     <script src="static/js/markerclusterer.js">

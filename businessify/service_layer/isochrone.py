@@ -23,16 +23,20 @@ def get_isochrone_mapbox(lat,lng,mode=None):
 
 
 def get_isochrone_os(lat,lng,mode=None):
+    print(lat)
+    print(lng)
+    position = str(lng) +","+ str(lat)
+    print(position)
     request_url = "https://api.openrouteservice.org/isochrones?" \
                   "api_key=5b3ce3597851110001cf62482d5dd8411707474f89a029c4002c6d9a" \
-                  "&locations=-77.0369,38.9072" \
+                  "&locations="+position + \
                   "&profile=driving-car" \
                   "&range=60,120,600" \
                   "&smoothing=1"
     #print(request_url)
     resp = requests.get(request_url)
     json_object = resp.json()
-    print(json_object["features"][0]["geometry"]["coordinates"])
+    # print(json_object["features"][0]["geometry"]["coordinates"])
     isochrone_coords = []
     isochrone_coords.append(json_object["features"][0]["geometry"]["coordinates"])
     isochrone_coords.append(json_object["features"][1]["geometry"]["coordinates"])

@@ -6,7 +6,8 @@ from pandas.io.json import json_normalize
 import numpy as np
 import matplotlib.pyplot as plt
 from geojson import Polygon
-
+import requests
+import businessify.config_k as config
 
 dataf = []
 
@@ -37,3 +38,13 @@ def read_djson():
     # print(df["city"].value_counts())
     print("done djson load")
     return df
+
+def get_geocode(location):
+    request_url = "https://maps.googleapis.com/maps/api/geocode/json?" \
+                  "address="+location +\
+                  "&key="+config.GOOGLEMAP_API
+    # print(request_url)
+    resp = requests.get(request_url)
+    json_object = resp.json()
+    # print(json_object["results"][0]["geometry"]["location"])
+    return json_object["results"][0]["geometry"]["location"]

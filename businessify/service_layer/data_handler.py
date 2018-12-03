@@ -1,5 +1,6 @@
 import businessify.service_layer.helper as helper
 import json
+import businessify.service_layer.isochrone as isochrone_service
 
 class DataHandler:
 
@@ -26,3 +27,9 @@ class DataHandler:
                 feature['properties'][prop] = row[prop]
             geojson['features'].append(feature)
         return geojson
+
+    def get_isochrone(self, location):
+        position = helper.get_geocode(location)
+        lat = position["lat"]
+        lng = position["lng"]
+        return isochrone_service.get_isochrone_os(lat,lng)
