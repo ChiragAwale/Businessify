@@ -1,27 +1,14 @@
 {% extends "layout.html" %}
 
 {% block map_style %}
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+    {% block analyze_style %} {% endblock %}
 {% endblock %}
 
+
 {% block map_content %}
+    <input id="pac-input" class="controls" type="text" placeholder="Search Address">
     <div id="map"></div>
-    <div id="demo">
-        <button type="button" onclick="loadTen()">Show 10 minute Isochrone</button>
-        <button type="button" onclick="loadTwo()">Show 2 minute Isochrone</button>
-        <button type="button" onclick="loadOne()">Show 1 minute Isochrone</button>
-    </div>
 
 {% endblock  %}
 
@@ -30,10 +17,79 @@
         function initMap() {
             var myLatlng = new google.maps.LatLng(38.903400, -77.042090);
             var mapOptions = {
-                zoom: 15,
+                zoom: 10,
                 center: myLatlng
             }
             map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+{#***************************************** Search and Search MARKERS **********************************************#}
+
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function() {
+              searchBox.setBounds(map.getBounds());
+            });
+
+
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function() {
+              var places = searchBox.getPlaces();
+
+              if (places.length == 0) {
+                return;
+              }
+
+              // Clear out the old markers.
+              markers.forEach(function(marker) {
+                marker.setMap(null);
+              });
+              markers = [];
+
+              // For each place, get the icon, name and location.
+              var bounds = new google.maps.LatLngBounds();
+              places.forEach(function(place) {
+                if (!place.geometry) {
+                  console.log("Returned place contains no geometry");
+                  return;
+                }
+                var icon = {
+                  url: place.icon,
+                  size: new google.maps.Size(71, 71),
+                  origin: new google.maps.Point(0, 0),
+                  anchor: new google.maps.Point(17, 34),
+                  scaledSize: new google.maps.Size(25, 25)
+                };
+
+                // Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                  map: map,
+                  icon: icon,
+                  title: place.name,
+                  position: place.geometry.location
+                }));
+
+                if (place.geometry.viewport) {
+                  // Only geocodes have viewport.
+                  bounds.union(place.geometry.viewport);
+                } else {
+                  bounds.extend(place.geometry.location);
+                }
+              });
+              map.fitBounds(bounds);
+            });
+
+{#***************************************** /Search and Search MARKERS **********************************************#}
+
+
+{#***************************************** LOADED MARKERS **********************************************#}
+
 
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -75,6 +131,7 @@
             var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
             locations.push(coords);
         }
+{#************************************************* /MARKERS **********************************************#}
 
         function loadTen() {
             {# For processing coordinate data for 10 minutes distance #}
@@ -140,7 +197,10 @@
 
     <script src="static/js/markerclusterer.js">
     </script>
+    {% block analyze_script %}
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&callback=initMap"
+    {% endblock %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVSZ_DJdhMlkjGFXx7PcBYPQi2dP_ZgLM&libraries=places&callback=initMap"
     async defer></script>
+
 {% endblock %}

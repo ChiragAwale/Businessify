@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee09dd39-b9f6-4ed4-bd1c-6415801cbab1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/businessify/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/businessify/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/businessify/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/businessify/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/businessify/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/businessify/templates/layout.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +19,7 @@
     <SUITE FILE_PATH="coverage/Businessify$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1543643590428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Businessify$Flask__app_py___1_.coverage" NAME="Flask (app.py) (1) Coverage Results" MODIFIED="1543624631103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Travel$tabledef.coverage" NAME="tabledef Coverage Results" MODIFIED="1541261005394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Businessify$run.coverage" NAME="run Coverage Results" MODIFIED="1543713440619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Businessify$run.coverage" NAME="run Coverage Results" MODIFIED="1543806323594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Travel$flights.coverage" NAME="flights Coverage Results" MODIFIED="1541266463138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Travel$Travel.coverage" NAME="Travel Coverage Results" MODIFIED="1541974998604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Travel$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542252195659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -50,11 +51,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/businessify/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="109" column="37" lean-forward="true" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
+            <state relative-caret-position="438">
+              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/businessify/static/css/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/businessify/static/css/home.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/businessify/templates/analyze.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="e#752#790#0#HTML" expanded="true" />
+                <element signature="e#258#265#1#HTML" expanded="true" />
+                <element signature="e#1971#1999#0#HTML" expanded="true" />
+                <element signature="e#2149#2177#0#HTML" expanded="true" />
+                <element signature="e#2325#2353#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/businessify/static/css/analyze.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/businessify/templates/layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/businessify/static/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -65,9 +127,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -77,10 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dummy.py" />
-        <option value="$PROJECT_DIR$/flights.py" />
-        <option value="$PROJECT_DIR$/static/routing.js" />
-        <option value="$PROJECT_DIR$/static/serviceLayer/js/mapsjs-service.js" />
         <option value="$PROJECT_DIR$/ServiceLayer/helper.py" />
         <option value="$PROJECT_DIR$/ServiceLayer/routing.py" />
         <option value="$PROJECT_DIR$/serviceLayer/routing.py" />
@@ -123,11 +181,15 @@
         <option value="$PROJECT_DIR$/businessify/service_layer/capital_one/merchant_data.py" />
         <option value="$PROJECT_DIR$/businessify/__init__.py" />
         <option value="$PROJECT_DIR$/businessify/static/css/main.css" />
-        <option value="$PROJECT_DIR$/businessify/templates/layout.html" />
         <option value="$PROJECT_DIR$/businessify/service_layer/isochrone.py" />
-        <option value="$PROJECT_DIR$/businessify/routes.py" />
         <option value="$PROJECT_DIR$/businessify/static/js/jquery" />
+        <option value="$PROJECT_DIR$/businessify/routes.py" />
+        <option value="$PROJECT_DIR$/businessify/templates/search.html" />
+        <option value="$PROJECT_DIR$/businessify/static/css/analyze.css" />
+        <option value="$PROJECT_DIR$/businessify/templates/analyze.html" />
+        <option value="$PROJECT_DIR$/businessify/templates/layout.html" />
         <option value="$PROJECT_DIR$/businessify/templates/home.html" />
+        <option value="$PROJECT_DIR$/businessify/static/css/home.css" />
       </list>
     </option>
   </component>
@@ -160,6 +222,13 @@
               <item name="Businessify" type="462c0819:PsiDirectoryNode" />
               <item name="businessify" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Businessify" type="462c0819:PsiDirectoryNode" />
+              <item name="businessify" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Businessify" type="b2602c69:ProjectViewProjectNode" />
@@ -387,11 +456,12 @@
       <workItem from="1543687382429" duration="2627000" />
       <workItem from="1543691663445" duration="722000" />
       <workItem from="1543709722507" duration="2311000" />
+      <workItem from="1543798148881" duration="5951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17063000" />
+    <option name="totallyTimeSpent" value="23014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,8 +474,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.1695279" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.17167382" />
       <window_info x="0" y="0" width="1440" height="900" id="Structure" order="1" sideWeight="0.47108433" side_tool="true" type="FLOATING" weight="0.17453505" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Project Explorer" order="3" />
@@ -435,7 +506,7 @@
       <window_info anchor="right" x="0" y="0" width="310" height="700" id="Documentation" order="5" sideWeight="0.50628364" side_tool="true" weight="0.3297568" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.16309012" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52891564" visible="true" weight="0.17167382" />
       <window_info x="0" y="0" width="1440" height="900" id="Structure" order="1" sideWeight="0.47108433" side_tool="true" type="FLOATING" weight="0.17453505" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Project Explorer" order="3" />
@@ -443,8 +514,8 @@
       <window_info id="Job Explorer" order="5" weight="0.32960597" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32771084" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32866243" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.26987952" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32771084" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.26987952" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -469,32 +540,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/businessify/venv/lib/python3.6/site-packages/flask/cli.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serviceLayer/__init__.py" />
-    <entry file="uml://JavaScript-modules-diagram//Users/chiragawale/Projects/Businessify">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="577.0" y="388.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://Python/#/Users/chiragawale/Projects/Businessify/app.py">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -646,13 +691,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/login.js" />
-    <entry file="file://$PROJECT_DIR$/businessify/static/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4ce4c81b-3044-4967-94e8-329f3b932690/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -669,13 +707,6 @@
     <entry file="file://$PROJECT_DIR$/businessify/data_layer/tabledef.py" />
     <entry file="file://$PROJECT_DIR$/businessify/templates/account.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -765,16 +796,6 @@
     <entry file="file://$PROJECT_DIR$/businessify/templates/register.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/businessify/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -799,30 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/templates/map-google.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="6" selection-start-line="6" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/businessify/service_layer/isochrone.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -840,20 +837,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/static/js/jquery">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/businessify/templates/layout.html">
+    <entry file="file://$PROJECT_DIR$/businessify/static/js/jquery" />
+    <entry file="file://$PROJECT_DIR$/businessify/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        <state relative-caret-position="278">
+          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/templates/map-google.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1158">
+          <caret line="6" selection-start-line="6" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/static/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/businessify/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="109" column="37" lean-forward="true" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
+        <state relative-caret-position="438">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/static/css/analyze.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/templates/analyze.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#752#790#0#HTML" expanded="true" />
+            <element signature="e#258#265#1#HTML" expanded="true" />
+            <element signature="e#1971#1999#0#HTML" expanded="true" />
+            <element signature="e#2149#2177#0#HTML" expanded="true" />
+            <element signature="e#2325#2353#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessify/static/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="49" column="23" lean-forward="true" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,75 @@
+{% extends "home.html" %}
+
+{% block analyze_style %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/analyze.css') }}">
+{% endblock %}
+
+{% block analyze_content %}
+    <!-- Trigger/Open The Modal -->
+
+{#    <form>#}
+{#      <div class="form-row align-items-center">#}
+{#        <div class="col-auto">#}
+{#          <label class="sr-only" for="inlineFormInput">Address </label>#}
+{#          <input type="text" class="form-control mb-2" id="location" placeholder="Address">#}
+{#        </div>#}
+{##}
+{#        <div class="col-auto">#}
+{#          <button type="submit" class="btn btn-primary mb-2">Analyze</button>#}
+{#        </div>#}
+{#      </div>#}
+{#    </form>#}
+
+    <button class = "btn btn-primary" id="myBtn" style="width: 80%; align-self: center">Analyze</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          <div id="demo">
+            <div style="padding-bottom: 20px" >
+              <button type="button" class="btn btn-info" onclick="loadTen()">Show 10 minute Isochrone</button>
+            </div>
+            <div style="padding-bottom: 20px">
+              <button type="button" class="btn btn-info" onclick="loadTwo()">Show 2 minute Isochrone</button>
+            </div>
+            <div style="padding-bottom: 20px">
+              <button type="button" class="btn btn-info" onclick="loadOne()">Show 1 minute Isochrone</button>
+            </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+{% block analyze_script %}
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+{% endblock %}
