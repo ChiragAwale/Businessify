@@ -8,7 +8,13 @@ class DataHandler:
         self.df = helper.read_djson()
 
     def get_list_by_city(self,city):
-        dt = self.df[self.df['city'].isin(['Vaughan'])]
+        dt = self.df[self.df['city'].isin([city])]
+        d = dt.to_dict(orient='records')
+        j = json.dumps(d)
+        return j
+
+    def get_list_by_state(self,state):
+        dt = self.df[self.df['state'].isin([state])]
         d = dt.to_dict(orient='records')
         j = json.dumps(d)
         return j

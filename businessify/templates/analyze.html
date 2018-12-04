@@ -22,6 +22,10 @@
 
     <button class = "btn btn-primary" id="myBtn" style="width: 80%; align-self: center">Analyze</button>
     <button class = "btn btn-primary" id="analyze" style="width: 80%; align-self: center">tst</button>
+    <form action="" class="form">
+      <input type="text" name="state_search" placeholder="Enter City Here">
+      <input type="button" name="button" Value="Click" onClick="business_fill(this.form)">
+    </form>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -75,7 +79,29 @@
         }
     }
     </script>
+    {# Marker Cluster Request Script#}
+    <SCRIPT LANGUAGE="JavaScript">
+        function business_fill (form) {
+            var state_var = form.state_search.value;
+            alert(state_var)
+            $.ajax({
+                    url: '/background_get_cluster',
+                    data: { 'state' : state_var },
+                    type: "post",
+                    cache: false,
+                    success: function (marker_data) {
+                        var d = {{ cluster_data|safe }}
+                        console.log(d);
+                        put_clusters(marker_data);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log("Failed");
+                    }
+            });
 
+
+        }
+    </SCRIPT>
 
     <script type=text/javascript>
     var btn = document.getElementById("analyze")
@@ -89,21 +115,21 @@
           {#  });#}
           {#  return false;#}
                $.ajax({
-                    url: '/background_process_test',
+                    url: '/background_get_isochrone',
                     data: { 'place' : input.value },
                     type: "post",
                     cache: false,
                     success: function (isc_data) {
 
-                        console.log(isc_data)
+                        console.log(isc_data);
                         isc0 = isc_data["isc_data"][0][0];
                         isc1 = isc_data["isc_data"][1][0];
                         isc2 = isc_data["isc_data"][2][0];
-                        console.log(isc0)
-                        console.log("Finished")
+                        console.log(isc0);
+                        console.log("Finished");
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
-                        $('#lblCommentsNotification').text("Error encountered while saving the comments.");
+                       console.log("Failed");
                     }
                 });
            });

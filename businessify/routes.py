@@ -16,14 +16,14 @@ data_handler = dh.DataHandler()
 @app.route("/")
 @app.route("/home")
 def home():
-    data = data_handler.get_list_by_city("Vaughan")
+    data = data_handler.get_list_by_state("ON")
     isc = isochrone.get_isochrone_os('38.903400', '-77.042090')
     access_token = config.MAPBOX_ACCESS_TOKEN
     return render_template('analyze.html', data=data, ACCESS_TOKEN=access_token, isc1=isc[0],isc2 = isc[1], isc10 = isc[2
     ])
 
 
-@app.route("/background_process_test", methods =['POST','GET'])
+@app.route("/background_get_isochrone", methods =['POST','GET'])
 def background_test():
     print("test")
     location = request.form["place"]
@@ -31,6 +31,16 @@ def background_test():
     print("Returned")
     print(isc)
     return jsonify(isc_data = isc)
+
+@app.route("/background_get_cluster", methods =['POST','GET'])
+def background_get_cluster():
+    print("cluster test")
+    state = request.form["state"]
+    cluster_data = data_handler.get_list_by_state(state)
+    print("Returned")
+    print(cluster_data)
+    return cluster_data
+
 
 @app.route("/about")
 def about():

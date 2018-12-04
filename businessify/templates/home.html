@@ -18,6 +18,8 @@
         var isc0 = [];
         var isc1 = [];
         var isc2 = [];
+        var cluster_data =[];
+
         function initMap() {
             var myLatlng = new google.maps.LatLng(38.903400, -77.042090);
             var mapOptions = {
@@ -99,17 +101,14 @@
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
             // Add some markers to the map.
-            // Note: The code uses the JavaScript Array.prototype.map() method to
-            // create an array of markers based on a given "locations" array.
-            // The map() method here has nothing to do with the Google Maps API.
             var markers = locations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
                     label: labels[i % labels.length]
                 });
-            });
+             });
 
-
+            {##}
             {#Markers #}
             {#var data =#}
             {#{{ data|safe }}#}
@@ -129,13 +128,52 @@
                 {imagePath: 'static/images/marker_clusterer/m'});
         }
 
-        {# Clustering business data on map #}
+        {#Clustering business data on map #}
         var data = {{ data|safe }}
         var locations = [];
         for(i in data){
-            var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
-            locations.push(coords);
+           var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
+           locations.push(coords);
         }
+
+        function put_clusters(marker_data) {
+                locations = [];
+                alert("here");
+
+                var data = JSON.parse(marker_data);
+
+                for(i in data){
+
+
+                    var coords = {lat: data[i]["latitude"], lng: data[i]["longitude"]};
+
+                    locations.push(coords);
+                    console.log(coords);
+                }
+
+
+                // Create an array of alphabetical characters used to label the markers.
+                var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+                // Add some markers to the map.
+                // Note: The code uses the JavaScript Array.prototype.map() method to
+                // create an array of markers based on a given "locations" array.
+                // The map() method here has nothing to do with the Google Maps API.
+                var markers = locations.map(function(location, i) {
+                  return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                  });
+                });
+                alert("third down");
+                // Add a marker clusterer to manage the markers.
+                var markerCluster = new MarkerClusterer(map, markers,
+                    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+            }
+
+
+
 {#************************************************* /MARKERS **********************************************#}
 
         function loadTen() {
