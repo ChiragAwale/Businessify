@@ -13,7 +13,7 @@ data_handler = dh.DataHandler()
 
 
 
-@app.route("/")
+
 @app.route("/home")
 def home():
     data = data_handler.get_list_by_state("ON")
@@ -21,6 +21,16 @@ def home():
     access_token = config.MAPBOX_ACCESS_TOKEN
     return render_template('analyze.html', data=data, ACCESS_TOKEN=access_token, isc1=isc[0],isc2 = isc[1], isc10 = isc[2
     ])
+
+@app.route("/analyze", methods = ['POST','GET'])
+def analyze():
+    name = request.form["name"]
+    type = request.form["type"]
+    location = request.form["address"]
+    data = data_handler.get_list_by_category(type)
+    isc = data_handler.get_isochrone(location)
+    return render_template('analyze.html', data=data,isc1=isc[0],isc2 = isc[1], isc10 = isc[2], title = name)
+
 
 
 @app.route("/background_get_isochrone", methods =['POST','GET'])
@@ -41,10 +51,10 @@ def background_get_cluster():
     print(cluster_data)
     return cluster_data
 
-
-@app.route("/about")
-def about():
-    return render_template('about.html', title='About')
+@app.route("/")
+@app.route("/analyze_form")
+def analyze_form():
+    return render_template('analyze_form.html', title='Analyze')
 
 
 @app.route("/register", methods=['GET', 'POST'])

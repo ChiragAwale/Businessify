@@ -2,6 +2,59 @@
 
 {% block analyze_style %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/analyze.css') }}">
+    <style>
+    /* Center the loader */
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 }
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      from{ bottom:-100px; opacity:0 }
+      to{ bottom:0; opacity:1 }
+    }
+
+    #myDiv {
+      display: none;
+      text-align: center;
+    }
+    </style>
 {% endblock %}
 
 {% block analyze_content %}
@@ -20,20 +73,18 @@
 {#      </div>#}
 {#    </form>#}
 
-    <button class = "btn btn-primary" id="myBtn" style="width: 80%; align-self: center">Analyze</button>
-    <button class = "btn btn-primary" id="analyze" style="width: 80%; align-self: center">tst</button>
-    <form action="" class="form">
-      <input type="text" name="state_search" placeholder="Enter City Here">
-      <input type="button" name="button" Value="Click" onClick="business_fill(this.form)">
-    </form>
+{#    <button class = "btn btn-primary" id="myBtn" style="width: 80%; align-self: center">Analyze</button>#}
+    <button class = "btn btn-primary" id="analyze" style="width: 80%; align-self: center" >Load</button>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
 
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-          <div id="demo">
+{#    <!-- The Modal -->#}
+{#    <div id="myModal" class="modal">#}
+{##}
+{#      <!-- Modal content -->#}
+{#      <div class="modal-content">#}
+{#        <span class="close">&times;</span>#}
+    <div id="loader" style="display:none;"></div>
+          <div id="demo" style="padding: 20px;display: none;">
             <div style="padding-bottom: 20px" >
               <button type="button" class="btn btn-info" onclick="loadIsochrone(isc0)">Show 1 minute Isochrone</button>
             </div>
@@ -44,14 +95,30 @@
               <button type="button" class="btn btn-info" onclick="loadIsochrone(isc2)">Show 10 minute Isochrone</button>
             </div>
           </div>
-      </div>
-    </div>
+{#      </div>#}
+{#    </div>#}
 
 
 {% endblock %}
 
 {% block analyze_script %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    function show_loader() {
+        document.getElementById("loader").style.display = "block";
+    }
+    function show_isochrone_menu() {
+        document.getElementById("demo").style.display = "block";
+    }
+     function hide_isochrone_menu() {
+        document.getElementById("demo").style.display = "none";
+    }
+
+    function hideLoader() {
+      document.getElementById("loader").style.display = "none";
+    }
+    </script>
+
     <script>
     // Get the modal
     var modal = document.getElementById('myModal');
@@ -108,6 +175,7 @@
 
         $(function() {
           $('#analyze').bind('click', function() {
+              show_loader();
               console.log(input.value)
           {#  $.getJSON('/background_process_test',#}
           {#      function(data) {#}
@@ -127,6 +195,8 @@
                         isc2 = isc_data["isc_data"][2][0];
                         console.log(isc0);
                         console.log("Finished");
+                        hideLoader();
+                        show_isochrone_menu();
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                        console.log("Failed");

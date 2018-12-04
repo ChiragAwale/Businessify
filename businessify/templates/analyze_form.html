@@ -1,4 +1,4 @@
-{% extends layout.html %}
+{% extends "layout.html" %}
 {% block style_ %}
 <style>
     body {
@@ -15,14 +15,14 @@
       box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
     }
 
-    .form-group {
+    .form-group1 {
       position: relative;
     }
-    .form-group + .form-group {
+    .form-group1 + .form-group1 {
       margin-top: 30px;
     }
 
-    .form-label {
+    .form-label1 {
       position: absolute;
       left: 0;
       top: 10px;
@@ -34,13 +34,13 @@
       transition: transform 150ms ease-out, font-size 150ms ease-out, -webkit-transform 150ms ease-out;
     }
 
-    .focused .form-label {
+    .focused .form-label1 {
       -webkit-transform: translateY(-125%);
               transform: translateY(-125%);
       font-size: .75em;
     }
 
-    .form-input {
+    .form-input1 {
       position: relative;
       padding: 12px 0px 5px 0;
       width: 100%;
@@ -49,47 +49,37 @@
       box-shadow: 0 1px 0 0 #e5e5e5;
       transition: box-shadow 150ms ease-out;
     }
-    .form-input:focus {
+    .form-input1:focus {
       box-shadow: 0 2px 0 0 blue;
     }
 
-    .form-input.filled {
+    .form-input1.filled {
       box-shadow: 0 2px 0 0 lightgreen;
     }
 </style>
 {% endblock %}
 {% block content %}
     <div class="form-wrapper">
+    <p style="padding: 20px"> Enter the following details to begin. </p>
+      <form method = "POST" action="/analyze">
 
-      <form action="" class="form">
-        <div class="form-group">
-          <label class="form-label" for="first">Suggested Name</label>
-          <input id="first" class="form-input" type="text" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="last">What is the category of your business?</label>
-          <input id="last" class="form-input" type="text" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="color">Enter priority address.</label>
-          <input id="color" class="form-input" type="text" />
-        </div>
+          <div style="padding: 20px;">
+          <input id="name" name = "name" class="form-input1" type="text" placeholder="Business Name" />
+          </div>
+          <div style="padding: 20px;">
+          <input id="type" name = "type" class="form-input1" type="text" placeholder="Product Type" />
+          </div>
+
+          <div style="padding: 20px;">
+          <input id="address" name = "address" class="form-input1" type="text" placeholder="Priority Address"/>
+          </div>
+
+          <div style="padding: 20px;">
+              <button type="submit" class="btn btn-info" style="width: 100%">Begin</button>
+          </div>
       </form>
     </div>
 
-    <script>
-        $('input').focus(function(){
-          $(this).parents('.form-group').addClass('focused');
-        });
 
-        $('input').blur(function(){
-          var inputValue = $(this).val();
-          if ( inputValue == "" ) {
-            $(this).removeClass('filled');
-            $(this).parents('.form-group').removeClass('focused');
-          } else {
-            $(this).addClass('filled');
-          }
-        })
-    </script>
+
 {% endblock %}
