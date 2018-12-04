@@ -1,4 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>{{ current_user.username }}</h1>
+    <h1>Hi {{ current_user.username }}</h1>
+
+    <h2> Your saved business ideas appear below.</h2>
+
+    <h5>BusinessName: {{ bname }}   </h5>
+    <h5>Type: {{ btype }}</h5>
+    <h5>Location: {{ blocation }}</h5>
 {% endblock content %}

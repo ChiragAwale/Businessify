@@ -11,7 +11,7 @@ import os
 
 data_handler = dh.DataHandler()
 
-
+savedBusiness = []
 
 
 @app.route("/home")
@@ -27,9 +27,12 @@ def analyze():
     name = request.form["name"]
     type = request.form["type"]
     location = request.form["address"]
+    savedBusiness.append(name)
+    savedBusiness.append(type)
+    savedBusiness.append(location)
     data = data_handler.get_list_by_category(type)
     isc = data_handler.get_isochrone(location)
-    return render_template('analyze.html', data=data,isc1=isc[0],isc2 = isc[1], isc10 = isc[2], title = name)
+    return render_template('analyze.html', data=data,isc1=isc[0],isc2 = isc[1], isc10 = isc[2], title = name, bname = name, btype = type, blocation = location)
 
 
 
@@ -97,7 +100,7 @@ def logout():
 @app.route("/account")
 @login_required
 def account():
-    return render_template('account.html', title='Account')
+    return render_template('account.html', title='Dashboard', bname = savedBusiness[0], btype = savedBusiness[1], blocation = savedBusiness[2] )
 
 
 

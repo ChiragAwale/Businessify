@@ -48,7 +48,7 @@ class DataHandler:
         lng = position["lng"]
         return isochrone_service.get_isochrone_os(lat,lng)
 
-    def get_geocode(location):
+    def get_geocode(self,location):
         request_url = "https://maps.googleapis.com/maps/api/geocode/json?" \
                       "address=" + location + \
                       "&key=" + config.GOOGLEMAP_API

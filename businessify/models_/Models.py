@@ -19,7 +19,7 @@ class Preferences:
 
 
 class ProspectiveBusiness:
-    def __init__(self, name, category, note, address = None,city = None,state = None,country = None,zip = None):
+    def __init__(self, name, category, address, note= None, city = None,state = None,country = None,zip = None):
         self.name = name
         self.category = category
         self.address = address
