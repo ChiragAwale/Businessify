@@ -36,7 +36,6 @@ def read_djson():
     df = pd.DataFrame.from_dict(dataf, orient = 'columns')
     # print(list(df.columns.values))
     # print(df["city"].value_counts())
-    print("done djson load")
     return df
 
 def get_geocode(location):
